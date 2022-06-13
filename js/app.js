@@ -61,6 +61,9 @@
 			}).then(function (response) {
 				const foundItems = [];
 				const allItems = response.data.menu_items;
+				if (searchTerm === ""){
+					return foundItems;
+				}
 				for (let i = 0; i < allItems.length; i++){
 					const item = allItems[i];
 					if (item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1){
